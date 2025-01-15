@@ -2,71 +2,65 @@ export const BaseInfo = {
     name: "Minh Tú",
     position: "Font end Web Developer",
     description:
-      "Become a professional Frontend Developer, focusing on React and TypeScript, and build web applications with user-friendly interfaces and high performance!",
+      "Trở thành một Lập trình viên Frontend chuyên nghiệp, tập trung vào React và TypeScript, và xây dựng các ứng dụng web với giao diện thân thiện với người dùng và hiệu suất cao!",
     profilePic: "/images/hero.jpg",
   };
   
   export const aboutInfo = {
-    title: "Crafting Web Application with Passion and Precision",
+    title: "Tạo ra các ứng dụng web với sự sáng tạo và nỗ lực không ngừng.",
     description:
-      "At webdev warriors, we’re a dedicated team of designers and developers committed to delivering tailored web solutions. With a blend of creativity and technical expertise, we help businesses elevate their online presence and achieve their goals",
-    client: "50+",
-    experience: "3+",
-    project: "200+",
-    website: "100+",
+      "Tôi là một lập trình viên trẻ, đầy đam mê và mong muốn phát triển. Mặc dù chưa có nhiều kinh nghiệm, tôi luôn không ngừng học hỏi và cải thiện kỹ năng để mang đến những giải pháp web sáng tạo, dễ sử dụng cho khách hàng. Bằng việc kết hợp giữa lý thuyết và thực tiễn, tôi mong muốn giúp các doanh nghiệp tạo dựng nền tảng trực tuyến vững mạnh, hướng tới mục tiêu cao hơn.",
+    client: "1+",
+    experience: "<1",
+    project: "3+",
+    website: "4+",
   };
   
   export const servicesData = [
     {
       id: 1,
-      title: " Web Applications",
-      description: "Tailored web apps built with the latest technologies.",
+      title: "Ứng Dụng Web",
+      description: "Ứng dụng web tùy chỉnh được xây dựng với các công nghệ mới nhất.",
       icon: "/images/s1.png",
     },
     {
       id: 2,
-      title: "E-commerce Websites",
+      title: "Trang Web Thương Mại Điện Tử",
       description:
-        "Secure online stores with user-friendly shopping and payments.",
+        "Cửa hàng trực tuyến an toàn với trải nghiệm mua sắm và thanh toán dễ dàng.",
       icon: "/images/s2.png",
     },
     {
       id: 3,
-      title: "API Integration",
+      title: "Tích Hợp API",
       description:
-        "Seamless integration for smooth data sharing and functionality.",
+        "Tích hợp mượt mà để chia sẻ dữ liệu và chức năng hiệu quả.",
       icon: "/images/s3.png",
     },
     {
       id: 4,
-      title: "User Interfaces",
+      title: "Giao Diện Người Dùng",
       description:
-        "Engaging, responsive front-end designs for better user experiences.",
+        "Thiết kế giao diện frontend đẹp mắt, phản hồi nhanh chóng mang lại trải nghiệm người dùng tuyệt vời.",
       icon: "/images/s4.png",
     },
     {
       id: 5,
-      title: "Database Solutions",
+      title: "Giải Pháp Cơ Sở Dữ Liệu",
       description:
-        "Efficient and scalable database management for your data needs.",
+        "Quản lý cơ sở dữ liệu hiệu quả và có thể mở rộng cho nhu cầu lưu trữ và xử lý dữ liệu.",
       icon: "/images/s5.png",
     },
     {
       id: 6,
-      title: "Real-Time Features",
-      description: "Add live chat, notifications, and real-time data updates.",
-      icon: "/images/s6.png",
-    },
-    {
-      id: 7,
-      title: "Speed Optimization",
-      description: "Boost performance with faster load times and optimization.",
+      title: "Tối Ưu Tốc Độ",
+      description: "Tăng cường hiệu suất với thời gian tải nhanh hơn và tối ưu hóa trang web.",
       icon: "/images/s7.png",
     },
     {
-      id: 8,
-      title: "Website Management",
-      description: "Easy content management systems with flexible controls.",
+      id: 7,
+      title: "Quản Lý Website",
+      description: "Hệ thống quản lý nội dung dễ dàng với các công cụ điều khiển linh hoạt.",
       icon: "/images/s8.png",
     },
   ];
@@ -74,44 +68,24 @@ export const BaseInfo = {
   export const projectData = [
     {
       id: 1,
-      image: "/images/p1.png",
-      url: "https://agency-opal-eight.vercel.app/",
+      image: "/images/shop.png",
+      url: "https://shop-frontend-sable.vercel.app/",
     },
     {
       id: 2,
-      image: "/images/p2.png",
-      url: "https://burger-pearl.vercel.app/",
+      image: "/images/hokkaido.png",
+      url: "https://hokkaidovietnam.com/",
     },
     {
       id: 3,
-      image: "/images/p3.png",
-      url: "https://game-ecommerce-yt.vercel.app/",
+      image: "/images/portfolio.png",
+      url: "https://portfolio-6ky7.vercel.app/",
     },
     {
       id: 4,
-      image: "/images/p4.png",
-      url: "https://elearning-yt.vercel.app/",
-    },
-    {
-      id: 5,
-      image: "/images/p5.png",
-      url: "https://invest-peach.vercel.app/",
-    },
-    {
-      id: 6,
-      image: "/images/p6.png",
-      url: "https://job-chi-ruby.vercel.app/",
-    },
-    {
-      id: 7,
-      image: "/images/p7.png",
-      url: "https://wdw-ecom.vercel.app/",
-    },
-    {
-      id: 8,
-      image: "/images/p8.png",
-      url: "https://webhost-ten.vercel.app/",
-    },
+      image: "/images/movie.png",
+      url: "https://movie-trailer-lac.vercel.app/",
+    }
   ];
   
   export const skillsData = [
@@ -119,37 +93,37 @@ export const BaseInfo = {
       id: 1,
       title: "HTML",
       image: "/images/html.svg",
-      percent: "67%",
+      percent: "80%",
     },
     {
       id: 2,
       title: "CSS",
       image: "/images/css.svg",
-      percent: "97%",
+      percent: "90%",
     },
     {
       id: 3,
       title: "JavaScript",
       image: "/images/js.svg",
-      percent: "77%",
+      percent: "75%",
     },
     {
       id: 4,
       title: "React",
       image: "/images/react.svg",
-      percent: "90%",
+      percent: "75%",
     },
     {
       id: 5,
       title: "TypeScript",
       image: "/images/ts.svg",
-      percent: "67%",
+      percent: "50%",
     },
     {
       id: 6,
       title: "Node JS",
       image: "/images/node.svg",
-      percent: "77%",
+      percent: "50%",
     },
     {
       id: 7,
@@ -161,7 +135,7 @@ export const BaseInfo = {
       id: 8,
       title: "Firebase",
       image: "/images/firebase.svg",
-      percent: "75%",
+      percent: "50%",
     }
   ];
   

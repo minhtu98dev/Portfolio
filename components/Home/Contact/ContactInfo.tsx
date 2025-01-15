@@ -10,7 +10,9 @@ const ContactInfo = () => {
           <FaPhone className="w-4 h-4 md:w-7 md:h-7 text-white" />
         </div>
         <div>
-          <h1 className="text-lg sm:text-xl text-white font-bold">Phone</h1>
+          <h1 className="text-lg sm:text-xl text-white font-bold">
+            Số điện thoại
+          </h1>
           <h1 className="text-base sm:text-xl text-white opacity-70">
             {contactData.phone}
           </h1>
@@ -22,7 +24,7 @@ const ContactInfo = () => {
         </div>
         <div>
           <h1 className="text-lg sm:text-xl text-white font-bold">
-            Email Adress
+            Email của tôi
           </h1>
           <h1 className="text-base sm:text-xl text-white opacity-70">
             {contactData.email}
@@ -34,7 +36,7 @@ const ContactInfo = () => {
           <FaEnvelope className="w-4 h-4 md:w-7 md:h-7 text-white" />
         </div>
         <div>
-          <h1 className="text-lg sm:text-xl text-white font-bold">Address</h1>
+          <h1 className="text-lg sm:text-xl text-white font-bold">Địa chỉ</h1>
           <h1 className="text-base sm:text-xl text-white opacity-70">
             {contactData.address}
           </h1>

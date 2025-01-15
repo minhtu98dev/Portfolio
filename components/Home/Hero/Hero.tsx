@@ -10,8 +10,8 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           {/* 1 */}
           <div>
-            <h1 className="text-2xl md:text-3xl mb-5 text-gray-300 font-semibold">
-              I am {BaseInfo.name}
+            <h1 className="text-2xl font-roboto md:text-3xl mb-5 text-gray-300 font-semibold">
+              Tôi là {BaseInfo.name}
             </h1>
             <h1 className="text-bg text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold md:leading-[3.5rem] lg:leading-[3.5rem] xl:leading-[4rem] text-white ">
               {BaseInfo.position}

@@ -8,7 +8,7 @@ import Services from "./Services/Services";
 
 const Home = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden font-roboto">
       <section id="home">
         <Hero />
       </section>

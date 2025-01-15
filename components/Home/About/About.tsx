@@ -7,7 +7,7 @@ import Image from "next/image";
 const About = () => {
   return (
     <div className="pt-16 pb-16 bg-[#050709]">
-      <SectionHeading>About Me</SectionHeading>
+      <SectionHeading>Về Tôi</SectionHeading>
       <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-20">
         {/* text */}
         <div>
@@ -58,7 +58,7 @@ const About = () => {
               {aboutInfo.client}
             </p>
             <p className="text-base lg:text-lg text-gray-400 text-center">
-              Satisfied Customer
+              Khách Hàng Hài Lòng
             </p>
           </div>
           <div>
@@ -73,7 +73,7 @@ const About = () => {
               {aboutInfo.experience}
             </p>
             <p className="text-base lg:text-lg text-gray-400 text-center">
-              Years Experience
+              Năm Kinh Nghiệm
             </p>
           </div>
           <div>
@@ -88,7 +88,7 @@ const About = () => {
               {aboutInfo.project}
             </p>
             <p className="text-base lg:text-lg text-gray-400 text-center">
-              Completed Project
+              Dự Án Hoàn Thành
             </p>
           </div>
           <div>
@@ -103,7 +103,7 @@ const About = () => {
               {aboutInfo.website}
             </p>
             <p className="text-base lg:text-lg text-gray-400 text-center">
-              Website Launched
+              Trang Web Đã Ra Mắt
             </p>
           </div>
         </div>

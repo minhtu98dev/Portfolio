@@ -58,9 +58,11 @@ const Nav = ({ openNav }: Props) => {
         {/* button */}
         <div className="flex space-x-2">
           <div className="flex items-center space-x-4">
-            <button className="md:px-10 md:py-3 px-8 py-3 text-blue-900 font-semibold sm:text-base text-sm bg-white hover:bg-gray-300 transition-all duration-200 rounded-lg">
-              Here Me
-            </button>
+            <a href="#contacts">
+              <button className="md:px-10 md:py-3 font-roboto px-8 py-3 text-blue-900 font-semibold sm:text-base text-sm bg-white hover:bg-gray-300 transition-all duration-200 rounded-lg">
+                Liên hệ với tôi
+              </button>
+            </a>
           </div>
           {/* burger */}
           <HiBars3BottomRight

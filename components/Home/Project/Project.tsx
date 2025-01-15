@@ -19,9 +19,9 @@ const Project = () => {
                 <Image
                   src={project.image}
                   alt="project"
-                  width={300}
-                  height={300}
-                  className="w-full"
+                  width={350}
+                  height={350}
+                  className="w-[600px] h-[700px] object-cover"
                 />
               </Link>
             </div>
