@@ -11,12 +11,12 @@
 "https://github.com/minhtu98dev/Portfolio.git"
 
 2.Cài đặt các dependencies:
-cd portfolio
-npm install
+- cd portfolio
+- npm install
 
 3.Chạy ứng dụng:
-npm start
+- npm start
 
 ## Cách Liên Hệ
-SĐT:0393940022
+SĐT:0393940022-
 Email:tupm.dev@gmail.com
