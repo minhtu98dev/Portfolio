@@ -7,10 +7,10 @@
 - HTML, CSS, JavaScript
 
 ## Cài Đặt và Sử Dụng
-1. Clone repository:
+1.Clone repository:
 "https://github.com/minhtu98dev/Portfolio.git"
 
-2. Cài đặt các dependencies:
+2.Cài đặt các dependencies:
 cd portfolio
 npm install
 
