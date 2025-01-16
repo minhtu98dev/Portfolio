@@ -19,7 +19,7 @@ const Hero = () => {
             <p className="mt-6 text-sm md:text-base text-white opacity-60">
               {BaseInfo.description}
             </p>
-            <a href="/cv_PHAM_MINH_TU.pdf" download="CV_Pham_Minh_Tu.pdf">
+            <a href="/CV_PHAM_MINH_TU.pdf" download="CV_Pham_Minh_Tu.pdf">
               <button className="md md:px-8 md:py-2.5 px-6 py-1.5 text-white font-semibold text-sm md:text-lg transition-all duration-200 rounded-lg mt-8 bg-blue-700 hover:bg-blue-900 flex items-center space-x-2">
                 <span>Download CV</span>
                 <FaDownload />
