@@ -62,9 +62,9 @@ const ContactForm = () => {
   console.log(formData);
 
   return (
-    <div className="bg-[#140c1c] rounded-lg sm:p-10">
-      <h1 className="text-bg text-2xl md:text-3xl lg:text-[2.5rem] font-bold">
-        Hãy Cùng Làm Việc!
+    <div className="bg-[#140c1c] rounded-lg p-5 sm:p-10">
+      <h1 className="text-bg text-2xl md:text-3xl lg:text-4 font-bold">
+        Hãy Cùng Làm Việc Với Tôi!
       </h1>
       <p className="text-gray-200 mt-5 lg:text-base text-xs md:text-sm">
         Chúng ta có thể cùng hợp tác để tạo ra những sản phẩm web chất lượng

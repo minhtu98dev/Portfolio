@@ -2,7 +2,7 @@ export const BaseInfo = {
     name: "Minh Tú",
     position: "Font end Web Developer",
     description:
-      "Trở thành một Lập trình viên Frontend chuyên nghiệp, tập trung vào React và TypeScript, và xây dựng các ứng dụng web với giao diện thân thiện với người dùng và hiệu suất cao!",
+      "Tôi là một lập trình viên chuyên xây dựng các ứng dụng web với giao diện thân thiện với người dùng và cải thiện hiệu suất hoạt động!",
     profilePic: "/images/hero.jpg",
   };
   
@@ -143,6 +143,6 @@ export const BaseInfo = {
   export const contactData = {
     phone: "+84(393 940 022)",
     email: "tupm.dev@gmail.com",
-    address: "district 7 , Ho Chi Minh City",
+    address: "Quận 7 , Ho Chi Minh City",
   };
   
