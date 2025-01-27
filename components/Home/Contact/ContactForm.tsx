@@ -48,11 +48,11 @@ const ContactForm = () => {
       .then(
         (response) => {
           console.log("Email gửi thành công:", response);
-          setSuccessMessage("Your message has been sent successfully!");
+          setSuccessMessage("Tin nhắn của bạn đã được gửi thành công!");
         },
         (error) => {
           console.error("Lỗi gửi email:", error);
-          setErrorMessage(`Oops! Something went wrong. Error: ${error.text}`); // Hiển thị thông báo lỗi chi tiết
+          setErrorMessage(`Ối! Đã xảy ra lỗi. Error: ${error.text}`); // Hiển thị thông báo lỗi chi tiết
         }
       )
       .finally(() => {
