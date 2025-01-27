@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="pt-16 pb-16 bg-[#0f0715]">
+    <div className="pt-16 pb-16 bg-[#0f0715] font-roboto">
       <div>
         <Image
           src="/images/logo2.0.png"
