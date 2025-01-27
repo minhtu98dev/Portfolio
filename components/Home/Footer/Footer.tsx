@@ -16,20 +16,20 @@ const Footer = () => {
       </div>
       <div className="flex items-center flex-wrap justify-center space-x-10 mt-4 text-white font-bold">
         <Link href="#home">
-          <div>Home</div>
+          <div>Trang chủ</div>
         </Link>
         <Link href="#services">
-          <div>Services</div>
+          <div>Dịch vụ</div>
         </Link>
         <Link href="#project">
-          <div>Project</div>
+          <div>Dự án</div>
         </Link>
         <Link href="#contact">
-          <div>Contact</div>
+          <div>Liên hệ</div>
         </Link>
       </div>
       <p className="text-white text-opacity-60 text-center mt-6">
-        © 2024 All Rights Reserved by Minh Tu
+        © 2024 Tất cả bản quyền được bảo lưu bởi Minh Tú
       </p>
     </div>
   );
