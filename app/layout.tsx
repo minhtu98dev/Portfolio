@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import ResNav from "@/components/Home/Navbar/ResNav";
-import Footer from "@/components/Home/Footer/Footer";
+
 import ScrollToTop from "@/components/Helper/ScrollToTop";
 
 const font = Sora({
@@ -23,9 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ResNav />
         {children}
-        <Footer />
+
         <ScrollToTop />
       </body>
     </html>

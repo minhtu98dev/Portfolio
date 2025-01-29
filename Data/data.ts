@@ -1,12 +1,22 @@
 export const BaseInfo = {
+  vi: {
     name: "Minh Tú",
-    position: "Font end Web Developer",
+    position: "Lập trình viên Fontend",
     description:
       "Tôi là một lập trình viên chuyên xây dựng các ứng dụng web với giao diện thân thiện với người dùng và cải thiện hiệu suất hoạt động!",
     profilePic: "/images/hero.jpg",
-  };
+  },
+  en: {
+    name: "Minh Tu",
+    position: "Frontend Web Developer",
+    description:
+      "I am a developer specializing in building user-friendly web applications and optimizing performance!",
+    profilePic: "/images/hero.jpg",
+  },
+};
   
-  export const aboutInfo = {
+export const aboutInfo = {
+  vi: {
     title: "Tạo ra các ứng dụng web với sự sáng tạo và nỗ lực không ngừng.",
     description:
       "Tôi là một lập trình viên trẻ, đầy đam mê và mong muốn phát triển. Mặc dù chưa có nhiều kinh nghiệm, tôi luôn không ngừng học hỏi và cải thiện kỹ năng để mang đến những giải pháp web sáng tạo, dễ sử dụng cho khách hàng. Bằng việc kết hợp giữa lý thuyết và thực tiễn, tôi mong muốn giúp các doanh nghiệp tạo dựng nền tảng trực tuyến vững mạnh, hướng tới mục tiêu cao hơn.",
@@ -14,9 +24,21 @@ export const BaseInfo = {
     experience: "<1",
     project: "3+",
     website: "4+",
-  };
+  },
+  en: {
+    title: "Creating web applications with creativity and continuous effort.",
+    description:
+      "I am a young, passionate developer eager to grow. Although I don't have much experience yet, I continuously learn and improve my skills to deliver creative and user-friendly web solutions. By combining theory with practice, I aim to help businesses build a strong online presence and achieve greater goals.",
+    client: "1+",
+    experience: "<1",
+    project: "3+",
+    website: "4+",
+  },
+};
+
   
-  export const servicesData = [
+export const servicesData = {
+  vi: [
     {
       id: 1,
       title: "Ứng Dụng Web",
@@ -63,7 +85,53 @@ export const BaseInfo = {
       description: "Hệ thống quản lý nội dung dễ dàng với các công cụ điều khiển linh hoạt.",
       icon: "/images/s8.png",
     },
-  ];
+  ],
+  en: [
+    {
+      id: 1,
+      title: "Web Application",
+      description: "Custom web applications built with the latest technologies.",
+      icon: "/images/s1.png",
+    },
+    {
+      id: 2,
+      title: "E-Commerce Websites",
+      description: "Safe online stores with an easy shopping and payment experience.",
+      icon: "/images/s2.png",
+    },
+    {
+      id: 3,
+      title: "API Integration",
+      description: "Seamless integration to share data and functionality effectively.",
+      icon: "/images/s3.png",
+    },
+    {
+      id: 4,
+      title: "User Interface Design",
+      description: "Beautiful frontend designs with fast responsiveness for a great user experience.",
+      icon: "/images/s4.png",
+    },
+    {
+      id: 5,
+      title: "Database Solutions",
+      description: "Efficient and scalable database management for storage and data processing needs.",
+      icon: "/images/s5.png",
+    },
+    {
+      id: 6,
+      title: "Speed Optimization",
+      description: "Enhance performance with faster load times and optimized website.",
+      icon: "/images/s7.png",
+    },
+    {
+      id: 7,
+      title: "Website Management",
+      description: "Easy-to-use content management systems with flexible control tools.",
+      icon: "/images/s8.png",
+    },
+  ],
+};
+
   
   export const projectData = [
     {
@@ -141,8 +209,14 @@ export const BaseInfo = {
   
    
   export const contactData = {
+  vi: {
     phone: "+84(393 940 022)",
     email: "tupm.dev@gmail.com",
     address: "Quận 7 , Ho Chi Minh City",
-  };
-  
+  },
+  en: {
+    phone: "+84(393 940 022)",
+    email: "tupm.dev@gmail.com",
+    address: "District 7, Ho Chi Minh City",
+  },
+};

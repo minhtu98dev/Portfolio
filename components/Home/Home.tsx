@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "./Hero/Hero";
 import About from "./About/About";
 import Project from "./Project/Project";
@@ -6,26 +5,30 @@ import Skills from "./Skills/Skills";
 import Contact from "./Contact/Contact";
 import Services from "./Services/Services";
 
-const Home = () => {
+type Props = {
+  currentLang: "vi" | "en"; // Nhận ngôn ngữ từ props
+};
+
+const Home = ({ currentLang }: Props) => {
   return (
     <div className="overflow-hidden font-roboto">
       <section id="home">
-        <Hero />
+        <Hero currentLang={currentLang} />
       </section>
       <section id="about">
-        <About />
+        <About currentLang={currentLang} />
       </section>
       <section id="services">
-        <Services />
+        <Services currentLang={currentLang} />
       </section>
       <section id="project">
-        <Project />
+        <Project currentLang={currentLang} />
       </section>
       <section id="skills">
-        <Skills />
+        <Skills currentLang={currentLang} />
       </section>
       <section id="contacts">
-        <Contact />
+        <Contact currentLang={currentLang} />
       </section>
     </div>
   );

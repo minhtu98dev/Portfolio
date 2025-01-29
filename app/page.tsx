@@ -1,12 +1,23 @@
+"use client";
+import React, { useState } from "react";
+import ResNav from "@/components/Home/Navbar/ResNav";
 import Home from "@/components/Home/Home";
-import React from "react";
+import Footer from "@/components/Home/Footer/Footer";
 
-const page = () => {
+const Page = () => {
+  const [currentLang, setCurrentLang] = useState<"vi" | "en">("vi");
+
+  const toggleLanguage = () => {
+    setCurrentLang((prevLang) => (prevLang === "vi" ? "en" : "vi"));
+  };
+
   return (
     <div>
-      <Home />
+      <ResNav toggleLanguage={toggleLanguage} currentLang={currentLang} />
+      <Home currentLang={currentLang} />
+      <Footer currentLang={currentLang} />
     </div>
   );
 };
 
-export default page;
+export default Page;

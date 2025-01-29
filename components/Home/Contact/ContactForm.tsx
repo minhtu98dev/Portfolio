@@ -1,10 +1,12 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"; // Đánh dấu đây là client-side component
-
 import React, { useState } from "react";
 import emailjs from "emailjs-com"; // Import emailjs
 
-const ContactForm = () => {
+type Props = {
+  currentLang: "vi" | "en"; // Nhận ngôn ngữ từ props
+};
+
+const ContactForm = ({ currentLang }: Props) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -16,6 +18,7 @@ const ContactForm = () => {
   const [isSending, setIsSending] = useState(false);
   const [successMessage, setSuccessMessage] = useState(""); // Thêm thông báo thành công
   const [errorMessage, setErrorMessage] = useState(""); // Thêm thông báo lỗi
+  const [formError, setFormError] = useState(""); // Thêm trạng thái lỗi form
 
   // Hàm để cập nhật dữ liệu form
   const handleChange = (
@@ -30,9 +33,32 @@ const ContactForm = () => {
     }));
   };
 
+  // Hàm kiểm tra form trước khi gửi
+  const validateForm = () => {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.message ||
+      !formData.option
+    ) {
+      setFormError(
+        currentLang === "vi"
+          ? "Vui lòng điền đầy đủ thông tin!"
+          : "Please fill out all fields!"
+      );
+      return false;
+    }
+    setFormError(""); // Reset lỗi form nếu đã điền đủ thông tin
+    return true;
+  };
+
   // Hàm gửi email
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return; // Nếu form không hợp lệ thì không gửi email
+
     setIsSending(true);
     setSuccessMessage(""); // Reset success message
     setErrorMessage(""); // Reset error message
@@ -48,28 +74,37 @@ const ContactForm = () => {
       .then(
         (response) => {
           console.log("Email gửi thành công:", response);
-          setSuccessMessage("Tin nhắn của bạn đã được gửi thành công!");
+          setSuccessMessage(
+            currentLang === "vi"
+              ? "Tin nhắn của bạn đã được gửi thành công!"
+              : "Your message has been sent successfully!"
+          );
         },
         (error) => {
           console.error("Lỗi gửi email:", error);
-          setErrorMessage(`Ối! Đã xảy ra lỗi. Error: ${error.text}`); // Hiển thị thông báo lỗi chi tiết
+          setErrorMessage(
+            currentLang === "vi"
+              ? `Ối! Đã xảy ra lỗi. Error: ${error.text}`
+              : `Oops! Something went wrong. Error: ${error.text}` // Hiển thị thông báo lỗi chi tiết
+          );
         }
       )
       .finally(() => {
         setIsSending(false);
       });
   };
-  console.log(formData);
 
   return (
     <div className="bg-[#140c1c] rounded-lg p-5 sm:p-10">
       <h1 className="text-bg text-2xl md:text-3xl lg:text-4 font-bold">
-        Hãy Cùng Làm Việc Với Tôi!
+        {currentLang === "vi"
+          ? "Hãy Cùng Làm Việc Với Tôi!"
+          : "Come work with me!"}
       </h1>
       <p className="text-gray-200 mt-5 lg:text-base text-xs md:text-sm">
-        Chúng ta có thể cùng hợp tác để tạo ra những sản phẩm web chất lượng
-        cao. Hãy để tôi giúp bạn hiện thực hóa các ý tưởng, xây dựng các ứng
-        dụng web mạnh mẽ và tối ưu hóa trải nghiệm người dùng.
+        {currentLang === "vi"
+          ? "Chúng ta có thể cùng hợp tác để tạo ra những sản phẩm web chất lượng cao. Hãy để tôi giúp bạn hiện thực hóa các ý tưởng, xây dựng các ứng dụng web mạnh mẽ và tối ưu hóa trải nghiệm người dùng."
+          : "We can work together to create high-quality web products. Let me help you turn your ideas into reality, build powerful web applications, and optimize user experience."}
       </p>
 
       {/* Hiển thị thông báo thành công hoặc lỗi */}
@@ -78,6 +113,11 @@ const ContactForm = () => {
       )}
       {errorMessage && (
         <p className="text-red-500 text-center mt-4">{errorMessage}</p>
+      )}
+
+      {/* Hiển thị thông báo lỗi nếu thiếu thông tin */}
+      {formError && (
+        <p className="text-red-500 text-center mt-4">{formError}</p>
       )}
 
       {/* input */}
@@ -91,7 +131,7 @@ const ContactForm = () => {
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            placeholder="Họ"
+            placeholder={currentLang === "vi" ? "Họ" : "First Name"}
             className="flex-1 bg-black text-white placeholder:text-gray-600 px-6 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
           <input
@@ -99,7 +139,7 @@ const ContactForm = () => {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            placeholder="Tên"
+            placeholder={currentLang === "vi" ? "Tên" : "Last Name"}
             className="flex-1 bg-black text-white placeholder:text-gray-600 px-6 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
         </div>
@@ -110,7 +150,9 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Địa chỉ Email"
+            placeholder={
+              currentLang === "vi" ? "Địa chỉ Email" : "Email Address"
+            }
             className="flex-1 bg-black text-white placeholder:text-gray-600 px-6 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
           <input
@@ -118,7 +160,9 @@ const ContactForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="Số điện thoại"
+            placeholder={
+              currentLang === "vi" ? "Số điện thoại" : "Phone Number"
+            }
             className="flex-1 bg-black text-white placeholder:text-gray-600 px-6 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
         </div>
@@ -131,11 +175,21 @@ const ContactForm = () => {
             className="w-full mt-5 bg-black text-white placeholder:text-gray-600 px-4 py-3.5 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none"
           >
             <option value="" disabled>
-              Tùy chọn
+              {currentLang === "vi" ? "Tùy chọn" : "Option"}
             </option>
-            <option value="frontend">Frontend Developer</option>
-            <option value="backend">Backend Developer</option>
-            <option value="fullstack">Fullstack Developer</option>
+            <option value="frontend">
+              {currentLang === "vi"
+                ? "Frontend Developer"
+                : "Frontend Developer"}
+            </option>
+            <option value="backend">
+              {currentLang === "vi" ? "Backend Developer" : "Backend Developer"}
+            </option>
+            <option value="fullstack">
+              {currentLang === "vi"
+                ? "Fullstack Developer"
+                : "Fullstack Developer"}
+            </option>
           </select>
         </div>
 
@@ -145,7 +199,7 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full mt-5 bg-black text-white placeholder:text-gray-600 px-4 py-3.5 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none"
           rows={7}
-          placeholder="Lời nhắn"
+          placeholder={currentLang === "vi" ? "Lời nhắn" : "Message"}
         ></textarea>
 
         <div className="mt-4">
@@ -154,7 +208,13 @@ const ContactForm = () => {
             disabled={isSending}
             className="px-6 py-3 font-medium bg-[#7947df] text-white hover:bg-[#5c2fb7] transition-all duration-200 rounded-full"
           >
-            {isSending ? "Gửi ..." : "Gửi lời nhắn"}
+            {isSending
+              ? currentLang === "vi"
+                ? "Gửi ..."
+                : "Sending ..."
+              : currentLang === "vi"
+              ? "Gửi lời nhắn"
+              : "Send Message"}
           </button>
         </div>
       </form>

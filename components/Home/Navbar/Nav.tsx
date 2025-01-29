@@ -3,49 +3,53 @@ import { navLink } from "@/constant/constant";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 import { HiBars3BottomRight } from "react-icons/hi2";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
+import { MdLanguage } from "react-icons/md";
 
 type Props = {
   openNav: () => void;
+  toggleLanguage: () => void;
+  currentLang: "vi" | "en";
 };
 
-const Nav = ({ openNav }: Props) => {
+const Nav = ({ openNav, toggleLanguage, currentLang }: Props) => {
   const [navBg, setNavBg] = useState(false);
 
-  useEffect(() => {
-    const handler = () => {
-      if (window.scrollY >= 90) {
-        setNavBg(true);
-      } else {
-        setNavBg(false);
-      }
-    };
-    window.addEventListener("scroll", handler);
-    return () => {
-      window.removeEventListener("scroll", handler);
-    };
+  // Xử lý hiệu ứng đổi màu navbar khi scroll
+  const handleScroll = useCallback(() => {
+    setNavBg(window.scrollY >= 90);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  // Đảm bảo navLink không bị lỗi
+  const links = navLink[currentLang] || [];
 
   return (
     <div
-      className={`fixed ${
-        navBg ? "bg-[#240b39]" : ""
-      } h-[10vh] z-[10] w-full transition-all duration-200`}
+      className={`fixed w-full top-0 left-0 z-10 transition-all duration-200 ${
+        navBg ? "bg-[#240b39]" : "bg-transparent"
+      }`}
     >
-      <div className="flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto">
+      <div className="flex items-center justify-between h-20 px-4 sm:px-6 bg-gray-800 text-white mx-auto">
         {/* Logo */}
-        <Image
-          src="/images/logo2.0.png"
-          alt="logo"
-          width={120}
-          height={120}
-          className="ml-[-1.5rem] sm:ml-0 hover:scale-110 duration-200"
-        />
+        <div className="flex items-center">
+          <Image
+            src="/images/logo2.0.png"
+            alt="logo"
+            width={120}
+            height={120}
+            className="ml-[-1.5rem] sm:ml-0 hover:scale-110 duration-200"
+          />
+        </div>
 
-        {/* Navigation Links */}
-        <div className="flex items-center space-x-10">
-          <div className="hidden lg:flex items-center space-x-8">
-            {navLink.map((nav) => (
+        {/* Các liên kết nav trên desktop */}
+        <div className="hidden lg:flex items-center space-x-8">
+          {links.length > 0 ? (
+            links.map((nav) => (
               <ScrollLink
                 key={nav.id}
                 to={nav.url.replace("#", "")}
@@ -53,34 +57,30 @@ const Nav = ({ openNav }: Props) => {
                 duration={300}
                 spy={true}
                 offset={-50}
-                className="nav_link hover:scale-110 duration-200 cursor-pointer"
+                className="nav_link text-white hover:scale-110 duration-200 cursor-pointer"
               >
                 {nav.label}
               </ScrollLink>
-            ))}
-          </div>
+            ))
+          ) : (
+            <p className="text-gray-400">No links available</p>
+          )}
         </div>
 
-        {/* Contact Button & Mobile Menu */}
-        <div className="flex space-x-2">
-          <div className="flex items-center space-x-4">
-            <ScrollLink
-              to="contacts"
-              smooth={true}
-              duration={800}
-              offset={-50}
-              className="cursor-pointer"
-            >
-              <button className="md:px-10 md:py-3 font-roboto px-8 py-3 text-blue-900 font-semibold sm:text-base text-sm bg-white hover:bg-gray-300 transition-all duration-200 rounded-lg">
-                Liên hệ với tôi
-              </button>
-            </ScrollLink>
-          </div>
+        {/* Button chuyển ngôn ngữ */}
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={toggleLanguage}
+            className="text-white flex items-center gap-2 justify-center bg-gray-700 px-4 py-2 rounded-lg font-bold hover:bg-gray-600 transition-all duration-200"
+          >
+            <MdLanguage size={25} />
+            {currentLang === "vi" ? "English" : "Vietnam"}
+          </button>
 
-          {/* Burger Menu Icon */}
+          {/* Icon mobile menu */}
           <HiBars3BottomRight
             onClick={openNav}
-            className="w-8 h-8 cursor-pointer text-white lg:hidden"
+            className="lg:hidden text-white w-8 h-8 cursor-pointer"
           />
         </div>
       </div>

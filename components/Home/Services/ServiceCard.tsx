@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import Tilt from "react-parallax-tilt";
+
 type Props = {
   service: {
     id: number;
@@ -10,11 +11,12 @@ type Props = {
     icon: string;
   };
 };
+
 const ServiceCard = ({ service }: Props) => {
   return (
     <Tilt className="shadow-2xl p-6 rounded-lg bg-[#814ced] h-[240px]">
       <Image
-        src={`${service.icon}`}
+        src={service.icon} // Đảm bảo link icon đúng
         alt={service.title}
         width={50}
         height={50}
