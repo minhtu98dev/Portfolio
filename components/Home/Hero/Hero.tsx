@@ -4,15 +4,15 @@ import React from "react";
 import { FaDownload } from "react-icons/fa";
 
 type Props = {
-  currentLang: "vi" | "en"; // Nhận ngôn ngữ từ props
+  currentLang: "vi" | "en";
 };
 
 const Hero = ({ currentLang }: Props) => {
-  const info = BaseInfo[currentLang]; // Lấy thông tin theo ngôn ngữ
+  const info = BaseInfo[currentLang];
   const cvFile =
-    currentLang === "vi" ? "/CV_Pham_Minh_Tu.pdf" : "/CV_MinhTu - ENGLISH.pdf";
+    currentLang === "vi" ? "/CV_Pham_Minh_Tu.pdf" : "/CV_MinhTu-ENGLISH.pdf";
   const cvFileName =
-    currentLang === "vi" ? "CV_Pham_Minh_Tu.pdf" : "CV_MinhTu - ENGLISH.pdf";
+    currentLang === "vi" ? "CV_Pham_Minh_Tu.pdf" : "CV_MinhTu-ENGLISH.pdf";
 
   return (
     <div className="w-full pt-[4vh] md:pt-[12vh] h-screen bg-[#0f0715] overflow-hidden relative">
