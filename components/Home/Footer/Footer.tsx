@@ -4,7 +4,6 @@ import React from "react";
 
 type Props = {
   currentLang: "vi" | "en"; // Nhận ngôn ngữ từ props
-  changeLang: (lang: "vi" | "en") => void; // Hàm thay đổi ngôn ngữ
 };
 
 const Footer = ({ currentLang }: Props) => {
