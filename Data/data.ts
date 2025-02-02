@@ -147,7 +147,7 @@ export const servicesData = {
     {
       id: 3,
       image: "/images/portfolio.png",
-      url: "https://portfolio-6ky7.vercel.app/",
+      url: "https://portfolio-cbyz4g8x1-minhtus-projects-bfdb5635.vercel.app/",
     },
     {
       id: 4,
