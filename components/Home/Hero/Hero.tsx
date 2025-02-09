@@ -9,9 +9,10 @@ type Props = {
 
 const Hero = ({ currentLang }: Props) => {
   const info = BaseInfo[currentLang];
-  const cvFile = currentLang === "vi" ? "/CV_MinhTu.pdf" : "/CV_MinhTu-EN.pdf";
+  const cvFile =
+    currentLang === "vi" ? "/CV_MinhTu.pdf" : "/CV_MinhTu-ENGLISH.pdf";
   const cvFileName =
-    currentLang === "vi" ? "CV_MinhTu.pdf" : "CV_MinhTu-EN.pdf";
+    currentLang === "vi" ? "CV_MinhTu.pdf" : "CV_MinhTu-ENGLISH.pdf";
 
   return (
     <div className="w-full pt-[4vh] md:pt-[12vh] h-screen bg-[#0f0715] overflow-hidden relative">
